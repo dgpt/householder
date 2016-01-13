@@ -25,7 +25,6 @@ gem 'jquery-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-
 group :development, :test do
   # nifty! https://github.com/ryanb/nifty-generators
   gem 'nifty-generators'
