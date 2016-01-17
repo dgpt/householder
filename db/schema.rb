@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111012158) do
+ActiveRecord::Schema.define(version: 20160116231901) do
+
+  create_table "people", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "name",                         null: false
+    t.text     "description"
+    t.datetime "due_by"
+    t.boolean  "complete",     default: false
+    t.string   "context_type",                 null: false
+    t.integer  "context_id",                   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "tasks", ["context_id"], name: "index_tasks_on_context_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
